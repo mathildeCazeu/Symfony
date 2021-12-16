@@ -48,7 +48,7 @@ class ProStageController extends AbstractController
     }
 
     /**
-     * @Route("/ressources/{id}", name="pro_stage_ressources12")
+     * @Route("/ressources/{id}", name="pro_stage_ressources")
      */
     public function afficherRessources($id)
     {
