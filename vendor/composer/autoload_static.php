@@ -125,6 +125,10 @@ class ComposerStaticInit28a33b11a8a84989b21f85c7f21a5ff5
         array (
             'Laminas\\Code\\' => 13,
         ),
+        'F' => 
+        array (
+            'Faker\\' => 6,
+        ),
         'E' => 
         array (
             'Egulias\\EmailValidator\\' => 23,
@@ -483,6 +487,10 @@ class ComposerStaticInit28a33b11a8a84989b21f85c7f21a5ff5
         'Laminas\\Code\\' => 
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-code/src',
+        ),
+        'Faker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
         'Egulias\\EmailValidator\\' => 
         array (
