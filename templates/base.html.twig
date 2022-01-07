@@ -31,20 +31,20 @@
     <div class = "container">
         {% block menu %}
             <h1>------- MENU -------</h1>
-            <div class="row" style="background-color:#67595E; border:2px solid #67595E;">
+            <div class="row" style="background-color:#67595E; border:2px solid #67595E">
                 <!-- BLOC ACCUEIL MENU -->
                     <div class = "col" style="text-align:center;">
-                        <a class="link" href="{{path('pro_stage_accueil')}}" style="color:white;">Accueil </a>
+                        <a class="link" href="{{path('pro_stage_accueil')}}" style="color:white; text-decoration:none">Accueil </a>
                     </div>
 
                 <!-- BLOC ENTREPRISES MENU -->
                     <div class = "col" style="text-align:center;">
-                        <a class="link" href="{{path('pro_stage_entreprises')}}" style="color:white;">Entreprises </a>
+                        <a class="link" href="{{path('pro_stage_entreprises')}}" style="color:white; text-decoration:none">Entreprises </a>
                     </div>
 
                 <!-- BLOC FORMATIONS MENU -->
                     <div class = "col" style="text-align:center;">
-                        <a class="link" href="{{path('pro_stage_formations')}}" style="color:white;">Formations </a>
+                        <a class="link" href="{{path('pro_stage_formations')}}" style="color:white; text-decoration:none">Formations </a>
                     </div>
             </div>
         {% endblock %}
