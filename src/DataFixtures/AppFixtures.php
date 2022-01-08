@@ -38,21 +38,47 @@ class AppFixtures extends Fixture
         /** FIN STAGES **/
 
         /** FORMATIONS **/
-        /*$DUT = new Formation();
-        $DUT->setNomCourt("DUT info");
-        $DUT->setNomLong($faker->realText($maxNbChars = 40, $indexSize = 2));
-        $manager->persist($DUT);*/
+        //Pas de génération auto pour avoir des formations précises
+        $dutInfo = new Formation();
+        $dutInfo->setNomCourt("DUT Info");
+        $dutInfo->setNomLong("DUT informatique");
+
+        $dutGIM = new Formation();
+        $dutGIM->setNomCourt("DUT GIM");
+        $dutGIM->setNomLong("DUT Génie Industriel et Maintenance");
+
+        $dutInfCom = new Formation();
+        $dutInfCom->setNomCourt("DUT Info-Comm");
+        $dutInfCom->setNomLong("DUT Information - Communication");
+
+        $dutTC = new Formation();
+        $dutTC->setNomCourt("DUT TC");
+        $dutTC->setNomLong("DUT Techniques de commercialisation");
+
+        $dutGEA = new Formation();
+        $dutGEA->setNomCourt("DUT GEA");
+        $dutGEA->setNomLong("DUT Gestion des Entreprises et des Administrations");
+
+        $lpNum = new Formation();
+        $lpNum->setNomCourt("LP NUM");
+        $lpNum->setNomLong("Licence Professionnelle Métiers du Numérique");
+
+        $lpProg = new Formation();
+        $lpProg->setNomCourt("LP Prog-AV");
+        $lpProg->setNomLong("Licence Professionnelle Programmation Avancée");
+
+        $tabFormation = array($dutInfo, $dutGIM, $dutInfCom, 
+                              $dutTC, $dutGEA, $lpNum, $lpProg);
+
+        foreach($tabFormation as $formations)
+        {
+            $manager->persist($formations);
+        }
         /** FIN FORMATIONS **/
+
+
 
         //Envoyer les données en bd
         $manager->flush();
     }
 }
-
-/*
-           $mesEntreprises = new Entreprise();
-            $mesEntreprises->setNom("UneEntreprise");
-            $mesEntreprises->setAdresse("12 rue du choux");
-            $mesEntreprises->setActivite("Développement");
-            $mesEntreprises->setSiteWeb("siteweb.org");
-*/
