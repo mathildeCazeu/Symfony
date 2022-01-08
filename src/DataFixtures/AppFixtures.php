@@ -18,17 +18,14 @@ class AppFixtures extends Fixture
         /** ENTREPRISES **/
         $nbEntreprises = 10;
 
-        for ($i=0; $i <= $nbEntreprises; $i++) 
-        { 
-            $entreprise = new Entreprise();
-            $entreprise->setNom($faker->company);
-            $entreprise->setAdresse($faker->address);
-            $entreprise->setActivite($faker->realText($maxNbChars = 50, $indexSize = 2));
-            $entreprise->setSiteWeb($faker->url);
 
-            $tabEntreprises[] = $entreprise;
-            $manager->persist($entreprise);
-        }
+            $mesEntreprises = new Entreprise();
+            $mesEntreprises->setNom($faker->company);
+            $mesEntreprises->setAdresse($faker->address);
+            $mesEntreprises->setActivite($faker->realText($maxNbChar = 50, $indexSize = 2));
+            $mesEntreprises->setSiteWeb($faker->url);
+
+            $manager->persist($mesEntreprises);
 
         /** FIN ENTREPRISES **/
 
@@ -37,13 +34,21 @@ class AppFixtures extends Fixture
         /** FIN STAGES **/
 
         /** FORMATIONS **/
-        $DUT = new Formation();
+        /*$DUT = new Formation();
         $DUT->setNomCourt("DUT info");
-      //$DUT->setNomLong($faker->realText($maxNbChars = 40, $indexSize = 2));
-        $manager->persist($DUT);
+        $DUT->setNomLong($faker->realText($maxNbChars = 40, $indexSize = 2));
+        $manager->persist($DUT);*/
         /** FIN FORMATIONS **/
 
         //Envoyer les données en bd
         $manager->flush();
     }
 }
+
+/*
+           $mesEntreprises = new Entreprise();
+            $mesEntreprises->setNom("UneEntreprise");
+            $mesEntreprises->setAdresse("12 rue du choux");
+            $mesEntreprises->setActivite("Développement");
+            $mesEntreprises->setSiteWeb("siteweb.org");
+*/
