@@ -34,11 +34,14 @@ class AppFixtures extends Fixture
         /** FIN ENTREPRISES **/
 
         /** STAGES **/
+        $nbStages = 10;
+        
             
         /** FIN STAGES **/
 
         /** FORMATIONS **/
         //Pas de génération auto pour avoir des formations précises
+
         $dutInfo = new Formation();
         $dutInfo->setNomCourt("DUT Info");
         $dutInfo->setNomLong("DUT informatique");
@@ -74,6 +77,7 @@ class AppFixtures extends Fixture
         {
             $manager->persist($formations);
         }
+
         /** FIN FORMATIONS **/
 
 
