@@ -18,7 +18,9 @@ class AppFixtures extends Fixture
         /** ENTREPRISES **/
         $nbEntreprises = 10;
 
-
+        for ($i=0; $i < $nbEntreprises ; $i++) 
+        { 
+            
             $mesEntreprises = new Entreprise();
             $mesEntreprises->setNom($faker->company);
             $mesEntreprises->setAdresse($faker->address);
@@ -26,6 +28,8 @@ class AppFixtures extends Fixture
             $mesEntreprises->setSiteWeb($faker->url);
 
             $manager->persist($mesEntreprises);
+        }
+
 
         /** FIN ENTREPRISES **/
 
