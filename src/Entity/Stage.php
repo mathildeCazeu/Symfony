@@ -45,6 +45,11 @@ class Stage
      */
     private $formations;
 
+    /**
+     * @ORM\Column(type="string", length=200)
+     */
+    private $domaine;
+
     public function __construct()
     {
         $this->formations = new ArrayCollection();
@@ -123,6 +128,18 @@ class Stage
     public function removeFormation(Formation $formation): self
     {
         $this->formations->removeElement($formation);
+
+        return $this;
+    }
+
+    public function getDomaine(): ?string
+    {
+        return $this->domaine;
+    }
+
+    public function setDomaine(string $domaine): self
+    {
+        $this->domaine = $domaine;
 
         return $this;
     }

@@ -27,6 +27,8 @@ class AppFixtures extends Fixture
             $mesEntreprises->setActivite($faker->realText($maxNbChar = 50, $indexSize = 2));
             $mesEntreprises->setSiteWeb($faker->url);
 
+            $tabEntreprise[] = $mesEntreprises;
+
             $manager->persist($mesEntreprises);
         }
 
