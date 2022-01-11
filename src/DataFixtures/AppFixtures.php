@@ -38,17 +38,21 @@ class AppFixtures extends Fixture
         /** STAGES **/
         $nbStages = 10;
 
+        $tabMetiers = 
+
         $stage = new Stage();
         $stage->setTitre("Un stage de développement");
         $stage->setMission("Une mission au pif lalalalalala");
         $stage->setEmail("unemail@mail.com");
+        $stage->setDomaine("unDomaine");
 
         $indiceFormation = $faker->numberBetween($min = 0, $max = 7);
         $indiceEntreprise = $faker->numberBetween($min = 0, $max = 10);
 
         $stage->setEntreprise($indiceEntreprise);
         $stage->addFormation();
-        
+        $stage->setEntreprises();
+        $manager->persist($stage);
             
         /** FIN STAGES **/
 
