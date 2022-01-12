@@ -9,10 +9,14 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Bienvenue sur la page d'accueil de ProStage ✅</h1>
+    <h1>Liste des stages proposés</h1>
     <p>
         Vous trouverez ci-dessous la liste des entreprises proposant un stage:
     </p>
+    <div class="card-desk">
+        {% for stageCourant in stages %}
+            <a class="link" href="{{path('pro_stage_stages', {id:stageCourant.id})}}">
+        {% endfor %}
 </div>
 
 
