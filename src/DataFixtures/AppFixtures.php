@@ -35,27 +35,6 @@ class AppFixtures extends Fixture
 
         /** FIN ENTREPRISES **/
 
-        /** STAGES **/
-        $nbStages = 10;
-
-        $tabMetiers = 
-
-        $stage = new Stage();
-        $stage->setTitre("Un stage de développement");
-        $stage->setMission("Une mission au pif lalalalalala");
-        $stage->setEmail("unemail@mail.com");
-        $stage->setDomaine("unDomaine");
-
-        $indiceFormation = $faker->numberBetween($min = 0, $max = 7);
-        $indiceEntreprise = $faker->numberBetween($min = 0, $max = 10);
-
-        $stage->setEntreprise($indiceEntreprise);
-        $stage->addFormation();
-        $stage->setEntreprises();
-        $manager->persist($stage);
-            
-        /** FIN STAGES **/
-
         /** FORMATIONS **/
         //Pas de génération auto pour avoir des formations précises
 
@@ -97,6 +76,26 @@ class AppFixtures extends Fixture
 
         /** FIN FORMATIONS **/
 
+        /** STAGES **/
+        $nbStages = 10;
+
+        $tabMission = array('Consultant data','Développeur','Assistant chef de projet',
+                            'Community Manager','Business Developer','Comptabilité','Assistant Comptable'); 
+
+        $stage = new Stage();
+        $stage->setTitre("Un stage de développement");
+        $stage->setMission("Une mission au pif lalalalalala");
+        $stage->setEmail("unemail@mail.com");
+        $stage->setDomaine("unDomaine");
+
+        $indiceFormation = $faker->numberBetween($min = 0, $max = 7);
+        $indiceEntreprise = $faker->numberBetween($min = 0, $max = $nbEntreprises);
+
+        $stage->setEntreprises($tabEntreprise[$indiceEntreprise]);
+        $stage->addFormation($tabFormation[$indiceFormation]);
+        $manager->persist($stage);
+            
+        /** FIN STAGES **/
 
 
         //Envoyer les données en bd
