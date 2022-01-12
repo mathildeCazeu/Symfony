@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Stage;
 use App\Entity\Entreprise;
+use App\Entity\Formation;
 
 class ProStageController extends AbstractController
 {
@@ -45,9 +46,11 @@ class ProStageController extends AbstractController
      */
     public function formations(): Response
     {
+        $repositoryFormation = $this->getDoctrine()->getRepository(Formation::class);
+        $formations = $repositoryFormation->findAll();
+
         return $this->render('pro_stage/formations.html.twig', [
-            'controller_name' => 'ProStageController',
-        ]);
+            'controller_name' => 'ProStageController', 'formations'=>$formations]);
     }
 
     /**
