@@ -16,8 +16,21 @@
     <div class="card-desk">
         {% for stageCourant in stages %}
             <a class="link" href="{{path('pro_stage_stages', {id:stageCourant.id})}}">
+                <div class="card">
+                    <h3 class="card-title" style="text-align:center;"> {{stageCourant.titre}}</h3>
+                    <h4 class="card-title"> {{stageCourant.Entreprises.nom}} </h4>
+
+                    {% for formationCourante in stageCourant.formations %} 
+                        <h4 class="card-title"> {{formationCourante.nomLong}}</h4>
+                    {% endfor %}
+
+                </div>
+            </a>
         {% endfor %}
 </div>
 
 
+{% endblock %}
+
+{% block footer %}
 {% endblock %}
