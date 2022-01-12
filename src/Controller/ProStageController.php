@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Stage;
+use App\Entity\Entreprise;
 
 class ProStageController extends AbstractController
 {
@@ -32,9 +33,11 @@ class ProStageController extends AbstractController
      */
     public function entreprises(): Response
     {
+        $repositoryEntreprise = $this->getDoctrine()->getRepository(Entreprise::class);
+        $entreprises = $repositoryEntreprise->findAll();
+
         return $this->render('pro_stage/entreprises.html.twig', [
-            'controller_name' => 'ProStageController',
-        ]);
+            'controller_name' => 'ProStageController','entreprises'=>$entreprises]);
     }
 
     /**
