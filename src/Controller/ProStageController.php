@@ -12,7 +12,12 @@ class ProStageController extends AbstractController
      * @Route("/", name="pro_stage_accueil")
      */
     public function index(): Response
-    {
+    {   
+        //Récuppérer le repository de l'entité Ressource
+       
+        //Récuppérer les ressources enregistrées en bd
+
+        //Envoyer les ressources à la vue chargée de les afficher
         return $this->render('pro_stage/index.html.twig', [
             'controller_name' => 'ProStageController',
         ]);
