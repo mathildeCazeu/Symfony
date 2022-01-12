@@ -81,19 +81,23 @@ class AppFixtures extends Fixture
 
         $tabMission = array('Consultant data','Développeur','Assistant chef de projet',
                             'Community Manager','Business Developer','Comptabilité','Assistant Comptable'); 
+        $tabDomaine = array('Web','Mobilité','Réseau','Communication','Marketing',
+                            'Mécanique','Santé');
+        for ($i=0; $i<$nbStages; $i++)        
+        {       
+            $stage = new Stage();
+            $stage->setTitre($tabMission[rand(0, count($tabMission)-1)]);
+            $stage->setMission($faker->paragraph(3,false));
+            $stage->setEmail($faker->email);
+            $stage->setDomaine($tabDomaine[rand(0, count($tabDomaine)-1)]);
 
-        $stage = new Stage();
-        $stage->setTitre("Un stage de développement");
-        $stage->setMission("Une mission au pif lalalalalala");
-        $stage->setEmail("unemail@mail.com");
-        $stage->setDomaine("unDomaine");
+            $indiceFormation = $faker->numberBetween($min = 0, $max = 6);
+            $indiceEntreprise = $faker->numberBetween($min = 0, $max = $nbEntreprises - 1);
 
-        $indiceFormation = $faker->numberBetween($min = 0, $max = 7);
-        $indiceEntreprise = $faker->numberBetween($min = 0, $max = $nbEntreprises);
-
-        $stage->setEntreprises($tabEntreprise[$indiceEntreprise]);
-        $stage->addFormation($tabFormation[$indiceFormation]);
-        $manager->persist($stage);
+            $stage->setEntreprises($tabEntreprise[$indiceEntreprise]);
+            $stage->addFormation($tabFormation[$indiceFormation]);
+            $manager->persist($stage);
+        }   
             
         /** FIN STAGES **/
 
