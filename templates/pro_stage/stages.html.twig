@@ -11,6 +11,9 @@
 <div class="example-wrapper">
      {% for stageCourant in stages %}
         <h1>{{stageCourant.titre}}</h1>
+        {% for formationCourante in stageCourant.formations%}
+            <h2>{{formationCourante.nomLong}}</h2>
+        {% endfor %}
      {% endfor %}
 
 </div>
