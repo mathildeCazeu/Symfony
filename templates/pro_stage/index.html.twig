@@ -13,21 +13,28 @@
     <p>
         Vous trouverez ci-dessous la liste des entreprises proposant un stage:
     </p>
-    <div class="card-desk">
+    <div class="card bg-colour">
         {% for stageCourant in stages %}
-            <a class="link" href="{{path('pro_stage_stages', {id:stageCourant.id})}}">
-                <div class="card">
-                    <h3 class="card-title"> {{stageCourant.titre}}</h3>
-                    <h4 class="card-title"> {{stageCourant.Entreprises.nom}} </h4>
+            <div class="card-header">
+                <h3 class="card-title"> {{stageCourant.Entreprises.nom}}</h3>
+            </div>
+            <div class="card-body">
+                <h4 class="card-subtitle"> {{stageCourant.titre}}  </h4>
+                {% for formationCourante in stageCourant.formations %} 
+                    <h4 class="card-subtitle"> {{formationCourante.nomLong}}</h4>
+                {% endfor %}
+            </div>
+            <div class="card-footer">
+                <a class="link" href="{{path('pro_stage_stages', {id:stageCourant.id})}}">
+                    Lien vers le stage
+                </a>
 
-                    {% for formationCourante in stageCourant.formations %} 
-                        <h4 class="card-title"> {{formationCourante.nomLong}}</h4>
-                    {% endfor %}
-
-                </div>
-            </a>
+            </div>
+            
         {% endfor %}
+    </div>
 </div>
+
 
 
 {% endblock %}
