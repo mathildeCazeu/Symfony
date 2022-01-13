@@ -81,4 +81,16 @@ class ProStageController extends AbstractController
         ['controller_name' => 'ProStageController' , 'entreprise' => $entreprise]);
     }
 
+    /**
+     * @Route("/formations/{id}", name="pro_stage_stagesParFormation")
+     */
+    public function stagesParFormation($id): Response
+    {
+        $repositoryFormation = $this->getDoctrine()->getRepository(Formation::class);
+        $formation = $repositoryFormation->Find($id);
+
+        return $this->render('pro_stage/stagesParFormation.html.twig',
+        ['controller_name' => 'ProStageController' , 'formation' => $formation]);
+    }
+
 }
