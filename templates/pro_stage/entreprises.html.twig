@@ -11,14 +11,13 @@
 <div class="example-wrapper">
     <h1>Liste des entreprises proposant un stage</h1>
     {% for entrepriseCourante in entreprises %}
-        <a class="link" href="{{path('pro_stage_entreprises', {id:entrepriseCourante.id})}}"> 
+        <a class="link" href="{{path('pro_stage_stagesParEntreprise', {id:entrepriseCourante.id})}}">
             <div class="card">
-                <h4 class="card-title"> {{ entrepriseCourante.nom}} </h4> 
+                <h4 class="card-title"> {{ entrepriseCourante.nom}} </h4> </a> 
                 <p  class="cart-text">
                     {{entrepriseCourante.adresse}}
                 </p>
             </div>
-        </a>
     {% endfor %}
 </div>
 {% endblock %}
